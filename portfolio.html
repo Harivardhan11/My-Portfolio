@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hari Vardhan's Premium Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto&display=swap" rel="stylesheet" />
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', 'Roboto', sans-serif;
+        }
+        body {
+            background: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        a {
+            color: #0056b3;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #ffb400;
+        }
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: #fff;
+            padding: 40px 0;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        header h1 {
+            font-weight: 700;
+            font-size: 3rem;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+        nav ul li a {
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+        nav ul li a:hover {
+            background: #ffb400;
+            color: #0f2027;
+        }
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        /* About Section */
+        #about {
+            background: #fff;
+            padding: 60px 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+        #about .about-text {
+            flex: 1 1 400px;
+        }
+        #about h2 {
+            font-size: 2.5rem;
+            color: #203a43;
+            margin-bottom: 20px;
+        }
+        #about p {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: #555;
+        }
+        #about .btn-primary {
+            background: #ffb400;
+            color: #0f2027;
+            padding: 12px 30px;
+            font-weight: 700;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+        }
+        #about .btn-primary:hover {
+            background: #e6a300;
+        }
+        #about .about-image img {
+            width: 320px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            object-fit: cover;
+        }
+        /* Skills Section */
+        #skills {
+            background: #e9f0f7;
+            padding: 60px 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            margin-top: 40px;
+            text-align: center;
+        }
+        #skills h2 {
+            font-size: 2.5rem;
+            color: #203a43;
+            margin-bottom: 40px;
+        }
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .skill {
+            background: #203a43;
+            color: #ffb400;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            cursor: default;
+        }
+        .skill:hover {
+            transform: scale(1.1);
+        }
+        /* Education Section */
+        #education {
+            background: #fff;
+            padding: 60px 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            margin-top: 40px;
+            text-align: center;
+        }
+        #education h2 {
+            font-size: 2.5rem;
+            color: #203a43;
+            margin-bottom: 20px;
+        }
+        #education p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        /* Projects Section */
+        #projects {
+            background: #e9f0f7;
+            padding: 60px 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            margin-top: 40px;
+        }
+        #projects h2 {
+            font-size: 2.5rem;
+            color: #203a43;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .project {
+            background: #fff;
+            padding: 25px 30px;
+            border-radius: 15px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+        .project:hover {
+            transform: translateY(-5px);
+        }
+        .project h3 {
+            color: #0f2027;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        .project p {
+            color: #555;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+        .project-btn {
+            background: #ffb400;
+            color: #0f2027;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .project-btn:hover {
+            background: #e6a300;
+        }
+        /* Gallery Section */
+        #gallery {
+            background: #fff;
+            padding: 60px 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            margin-top: 40px;
+            text-align: center;
+        }
+        #gallery h2 {
+            font-size: 2.5rem;
+            color: #203a43;
+            margin-bottom: 40px;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            justify-items: center;
+        }
+        .gallery-img1 {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .gallery-img1:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        /* Contact Section */
+        #contact {
+            background: #e9f0f7;
+            padding: 60px 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+            margin-top: 40px;
+        }
+        #contact h2 {
+            font-size: 2.5rem;
+            color: #203a43;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+        }
+        .contact-box, .contact-form {
+            background: #fff;
+            padding: 30px 25px;
+            border-radius: 15px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+            flex: 1 1 350px;
+            max-width: 400px;
+        }
+        .contact-info p {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 15px;
+        }
+        .contact-form label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #203a43;
+        }
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px 15px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+            font-family: 'Roboto', sans-serif;
+        }
+        .contact-form input[type="text"]:focus,
+        .contact-form input[type="email"]:focus,
+        .contact-form textarea:focus {
+            border-color: #ffb400;
+            outline: none;
+        }
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        .btn-submit {
+            background: #ffb400;
+            color: #0f2027;
+            border: none;
+            padding: 12px 30px;
+            font-weight: 700;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            width: 100%;
+            font-size: 1.1rem;
+        }
+        .btn-submit:hover {
+            background: #e6a300;
+        }
+        /* Footer */
+        footer {
+            background: #0f2027;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 60px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            box-shadow: 0 -4px 15px rgba(0,0,0,0.3);
+        }
+        .social-icons a {
+            color: #ffb400;
+            margin: 0 15px;
+            font-weight: 700;
+            transition: color 0.3s ease;
+        }
+        .social-icons a:hover {
+            color: #fff;
+        }
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Responsive */
+        @media (max-width: 768px) {
+            #about {
+                flex-direction: column;
+                text-align: center;
+            }
+            #about .about-image img {
+                width: 100%;
+                max-width: 320px;
+                margin: 0 auto;
+            }
+            nav ul {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('nav ul li a').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Hari Vardhan's Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about" class="container">
+        <div class="about-text">
+            <h2>About Me</h2>
+            <p>Hello! I'm <strong>Hari Vardhan</strong>, a passionate <strong>2nd-year Computer Science student</strong> at <strong>SRM University - AP</strong>.</p>
+            <p>I am exploring <strong>Big data analysis</strong> & <strong>AI/ML</strong>, with a drive for continuous learning and professional growth.</p>
+            <a href="#projects" class="btn-primary">View My Projects</a>
+        </div>
+<div class="about-image">
+    </section>
+
+    <section id="skills" class="container">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill">C / C++</div>
+            <div class="skill">Python (Foundation)</div>
+            <div class="skill">Big data analysis (In Progress)</div>
+            <div class="skill">Cybersecurity Basics</div>
+            <div class="skill">Collaboration & Communication</div>
+        </div>
+    </section>
+
+    <section id="education" class="container">
+        <h2>Education</h2>
+        <p><strong>SRM University - AP</strong></p>
+        <p>B.Tech in Computer Science and Engineering (2023-2027)</p>
+    </section>
+
+    <section id="projects" class="container">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Knight's Tour Encryption System</h3>
+            <p>The Knight's Tour Encryption System is a cryptographic application that leverages the Knight's Tour problem on a chessboard to generate a unique encryption key. This key is then used for XOR-based encryption and decryption of messages. It ensures secure communication by combining mathematical puzzles with cryptography.</p>
+            <a href="https://github.com/topics/knights-tour-encryption" target="_blank" class="project-btn">Learn More</a>
+        </div>
+        <div class="project">
+            <h3>Hotel Booking System</h3>
+            <p>The Hotel Booking System with Loyalty Program is a C++ console-based application designed to manage hotel room bookings efficiently. It includes features like room availability checks, booking management, and a loyalty program to reward frequent customers.</p>
+            <a href="https://github.com/topics/hotel-reservation-system" target="_blank" class="project-btn">Learn More</a>
+        </div>
+        <div class="project">
+            <h3>Indian Railway System</h3>
+            <p>This project is a web-based application that simulates the Indian Railway System. It includes features like train schedules, ticket booking, and real-time updates. The website is designed to provide a user-friendly interface for passengers.</p>
+            <a href="https://indianrailway.ccbp.tech" target="_blank" class="project-btn">Visit Website</a>
+        </div>
+    </section>
+
+    <section id="gallery" class="container">
+        <h2>My Gallery</h2>
+        <div class="gallery-grid">
+            <img src="C:\Users\91728\OneDrive\Attachments\pics\StockCake-Vintage Mustang Car_1744984442.jpg" alt="Gallery Image 1" class="gallery-img1" />
+            <img src="C:\Users\91728\OneDrive\Attachments\pics\pexels-skyriusmarketing-2129796.jpg" alt="Gallery Image 2" class="gallery-img1" />
+            </div>
+    </section>
+
+    <section id="contact" class="container">
+        <h2>Contact Me</h2>
+        <div class="contact-container">
+            <div class="contact-box">
+                <h3>Contact Information</h3>
+                <p><strong>Name:</strong> Hari Vardhan</p>
+                <p><strong>Contact:</strong> 7288866656</p>
+                <p><strong>Address:</strong> Near petrol bunk, Vijayawada</p>
+            </div>
+            <div class="contact-form">
+                <form id="contactForm">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required />
+
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required />
+
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+
+                    <button type="submit" class="btn-submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Hari Vardhan. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="https://github.com/Harivardhan11" target="_blank">GitHub</a>
+            <a href="#linkedin.com" target="_blank">LinkedIn</a>
+            <a href="mailto:harivardhan_dammalapati@srmap.edu.in">Email</a>
+        </div>
+    </footer>
+</body>
+</html>
