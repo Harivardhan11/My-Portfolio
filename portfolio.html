@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -364,6 +365,16 @@
                 gap: 15px;
             }
         }
+        /* Opening animation */
+        .fade-in {
+            opacity: 0;
+            animation: fadeInAnimation 1.5s forwards;
+        }
+        @keyframes fadeInAnimation {
+            to {
+                opacity: 1;
+            }
+        }
     </style>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -377,6 +388,9 @@
                     }
                 });
             });
+
+            // Opening animation: add fade-in class to body
+            document.body.classList.add('fade-in');
         });
     </script>
 </head>
@@ -459,7 +473,7 @@
                 <p><strong>Address:</strong> Near petrol bunk, Vijayawada</p>
             </div>
             <div class="contact-form">
-                <form id="contactForm">
+<form id="contactForm" action="contact_submit.php" method="POST">
                     <label for="name">Name:</label>
                     <input type="text" id="name" name="name" required />
 
